@@ -14,7 +14,7 @@ export class CatController {
   ) {}
 
   @Get('/cats')
-  async getHello(@Res() response) {
+  async getAllCats(@Res() response) {
     try {
       response.json(await this.findAllCatProxyModule.execute());
     } catch (err) {

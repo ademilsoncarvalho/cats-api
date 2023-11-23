@@ -1,5 +1,5 @@
 # Api Cats
-Short description of what the application does or offers.
+Api for search cats, this project follows the principles of clean architecture, promoting a clear separation of responsibilities between the application's layers. Currently, cat search is implemented only in memory, but the architecture allows easy extension to other types of storage.
 
 ## Prerequisites
 Make sure you have the following dependencies installed:
@@ -33,5 +33,11 @@ Returns a list of cats.
 This project follows the principles of clean architecture, promoting a clear separation of responsibilities between the application's layers. Currently, cat search is implemented only in memory, but the architecture allows easy extension to other types of storage.
 
 ## Testing
-Tests for this application are under development and need to be finalized.
-
+### For unit tests:
+  ```
+  npm run test
+  ```
+### For test coverage:
+  ```
+  npm run test:cov
+  ```
