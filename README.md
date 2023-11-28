@@ -21,8 +21,11 @@ The application will be available at: http://localhost:3000
 
 
 ## API Endpoints
-GET /cats
-Returns a list of cats.
+/cats, GET
+/cats/:id, GET
+/cats, POST
+/cats/:id, PUT
+/cats/:id, DELETE
 
 ## Example Usage
  ```

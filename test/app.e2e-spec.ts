@@ -15,10 +15,41 @@ describe('AppController (e2e)', () => {
     await app.init();
   });
 
-  it('/ (GET)', () => {
+  it('/cats (GET)', () => {
+    return request(app.getHttpServer()).get('/cats').expect(200).expect([]);
+  });
+
+  it('/cats (POST)', () => {
     return request(app.getHttpServer())
-      .get('/')
+      .post('/cats')
+      .send({ name: 'Fluffy', age: 3, color: 'white' })
+      .expect(201)
+      .expect({ id: 1, name: 'Fluffy', age: 3, color: 'white' });
+  });
+
+  it('/cats (GET)', () => {
+    return request(app.getHttpServer()).get('/cats').expect(200).expect([]);
+  });
+
+  it('/cats/:id (GET)', () => {
+    return request(app.getHttpServer())
+      .get('/cats/1')
       .expect(200)
-      .expect('Hello World!');
+      .expect({ name: 'Fluffy', age: 3, color: 'white', id: 1 });
+  });
+
+  it('/cats/:id (PUT)', () => {
+    return request(app.getHttpServer())
+      .put('/cats/1')
+      .send({ name: 'Whiskers', age: 4, color: 'gray' })
+      .expect(200)
+      .expect({ id: 1, name: 'Whiskers', age: 4, color: 'gray' });
+  });
+
+  it('/cats/:id (DELETE)', () => {
+    return request(app.getHttpServer())
+      .delete('/cats/1')
+      .expect(204)
+      .expect({});
   });
 });

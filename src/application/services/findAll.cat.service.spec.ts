@@ -19,7 +19,7 @@ describe('FindAllCatService', () => {
   });
 
   it('should return cats from repository', async () => {
-    const mockCats: Cat[] = [{ name: 'Fluffy', age: 3, color: 'white' }];
+    const mockCats: Cat[] = [{ id: 1, name: 'Fluffy', age: 3, color: 'white' }];
     mockCatRepository.getCats.mockResolvedValue(mockCats);
 
     const result = await findAllCatService.execute();
